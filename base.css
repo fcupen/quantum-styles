@@ -955,6 +955,225 @@ p:last-child {
 }
 
 /* ----------------------------------------------------------------
+   BUTTONS (shared between blog and support)
+   ---------------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: 0.875rem var(--space-8);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn--primary {
+    background: var(--gradient-primary);
+    background-size: 200% auto;
+    color: #fff;
+    border-color: transparent;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.25);
+}
+
+.btn--primary:hover {
+    background-position: right center;
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(var(--color-primary-rgb), 0.4);
+    transform: translateY(-2px);
+}
+
+/* Shimmer/shine effect on hover */
+.btn--primary::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.25) 50%,
+        transparent 70%
+    );
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
+.btn--primary:hover::before {
+    left: 100%;
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.btn--outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.15);
+}
+
+.btn--ghost {
+    background: rgba(var(--color-primary-rgb), 0.08);
+    color: var(--color-primary);
+    border-color: transparent;
+}
+
+.btn--ghost:hover {
+    background: rgba(var(--color-primary-rgb), 0.15);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.btn--sm {
+    padding: 0.625rem var(--space-5);
+    font-size: var(--font-size-sm);
+}
+
+.btn--lg {
+    padding: 1.125rem var(--space-10);
+    font-size: var(--font-size-lg);
+}
+
+/* ----------------------------------------------------------------
+   BACKWARD-COMPAT BUTTON ALIASES
+   Non-BEM class names kept for backward compatibility.
+   ---------------------------------------------------------------- */
+.btn-primary {
+    background: var(--gradient-primary);
+    background-size: 200% auto;
+    color: #fff;
+    border-color: transparent;
+    border-radius: var(--radius-full);
+    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.25);
+}
+
+.btn-primary:hover {
+    background-position: right center;
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(var(--color-primary-rgb), 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(var(--color-primary-rgb), 0.15);
+}
+
+.btn-ghost {
+    background: rgba(var(--color-primary-rgb), 0.08);
+    color: var(--color-primary);
+    border-color: transparent;
+}
+
+.btn-ghost:hover {
+    background: rgba(var(--color-primary-rgb), 0.15);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 0.625rem var(--space-5);
+    font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+    padding: 1.125rem var(--space-10);
+    font-size: var(--font-size-lg);
+}
+
+/* ----------------------------------------------------------------
+   BADGE VARIANTS (shared between blog and support)
+   ---------------------------------------------------------------- */
+.badge--primary {
+    background: rgba(var(--color-primary-rgb), 0.15);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.3);
+    color: var(--color-primary);
+}
+
+.badge--accent {
+    background: rgba(var(--color-accent-rgb), 0.12);
+    border: 1px solid rgba(var(--color-accent-rgb), 0.3);
+    color: var(--color-accent);
+}
+
+.badge--green {
+    background: rgba(0, 200, 100, 0.12);
+    border: 1px solid rgba(0, 200, 100, 0.3);
+    color: var(--color-success);
+}
+
+.badge--category {
+    background: rgba(var(--color-primary-rgb), 0.15);
+    color: var(--color-primary);
+    border: 1px solid transparent;
+}
+
+.badge--category:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.badge--tag {
+    background: var(--color-border-subtle);
+    color: var(--color-text-muted);
+}
+
+.badge--tag:hover {
+    background: rgba(var(--color-primary-rgb), 0.15);
+    color: var(--color-primary);
+}
+
+.badge--featured {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* ----------------------------------------------------------------
+   PAGE HEADER (shared between blog and support)
+   ---------------------------------------------------------------- */
+.page-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(84, 192, 145, 0.15);
+}
+
+/* ----------------------------------------------------------------
    SHARED DARK THEME OVERRIDES
    (Appended to existing dark theme section)
    ---------------------------------------------------------------- */

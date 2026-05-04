@@ -588,77 +588,10 @@
 }
 
 /* ----------------------------------------------------------------
-   28. GENERAL ENHANCEMENTS
+   SHARED COMPONENT ENHANCEMENTS
    ---------------------------------------------------------------- */
 
-/* Smooth navbar transition for JS scroll detection */
-.blog-header,
-.blog-header .header-inner,
-.blog-header .blog-logo,
-.blog-header .nav-link {
-    transition-property:
-        color, background, border-color, box-shadow, backdrop-filter, transform,
-        opacity;
-    transition-duration: 0.35s;
-    transition-timing-function: ease;
-}
-
-/* Better image overlays on post cards */
-.post-card__image-wrap::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, transparent 40%);
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-
-.post-card:hover .post-card__image-wrap::after {
-    opacity: 0.5;
-}
-
-/* Subtle entrance animation for cards */
-.posts-grid .post-card {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.posts-grid .post-card:nth-child(1) {
-    animation-delay: 0ms;
-}
-
-.posts-grid .post-card:nth-child(2) {
-    animation-delay: 80ms;
-}
-
-.posts-grid .post-card:nth-child(3) {
-    animation-delay: 160ms;
-}
-
-.posts-grid .post-card:nth-child(4) {
-    animation-delay: 240ms;
-}
-
-.posts-grid .post-card:nth-child(5) {
-    animation-delay: 320ms;
-}
-
-.posts-grid .post-card:nth-child(6) {
-    animation-delay: 400ms;
-}
-
-.posts-grid .post-card:nth-child(7) {
-    animation-delay: 480ms;
-}
-
-.posts-grid .post-card:nth-child(8) {
-    animation-delay: 560ms;
-}
-
-.posts-grid .post-card:nth-child(9) {
-    animation-delay: 640ms;
-}
-
-/* Better badge transitions */
+/* Badge transition */
 .badge {
     transition:
         background var(--transition-base),
@@ -676,39 +609,6 @@
 .badge--featured:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(84, 192, 145, 0.35);
-}
-
-/* Archive header enhancement */
-.archive-header {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px) saturate(140%);
-    -webkit-backdrop-filter: blur(12px) saturate(140%);
-    border: 1px solid var(--color-border-subtle);
-    border-left: 3px solid var(--color-primary, #54c091);
-}
-
-/* Post card read-more enhancement */
-.post-card__read-more {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.post-card__read-more::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gradient-primary);
-    border-radius: 1px;
-    transition: width 0.35s ease;
-}
-
-.post-card__read-more:hover::after {
-    width: 100%;
 }
 
 /* Reduce motion */
