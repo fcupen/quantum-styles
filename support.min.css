@@ -1,0 +1,1408 @@
+QUANTUM AI SIGNALS — SUPPORT BUNDLE
+Auto-generated:2026-05-04T16:41:23Z
+
+DO NOT EDIT DIRECTLY — Edit source files in /styles/ and rebuild:
+Order:tokens.css → base.css → animations.css → support-components.css
+================================================================ */
+
+
+QUANTUM AI SIGNALS — SHARED DESIGN TOKENS
+CSS Custom Properties compartidas entre blog,support y otros proyectos.
+Subir a CDN e importar antes que el resto de estilos.
+================================================================ */
+
+LIGHT THEME (default)
+---------------------------------------------------------------- */
+:root{
+--color-bg:#f4f4f8
+--color-surface:#ffffff
+--color-surface-2:#eaeaf4
+--color-primary:rgb(84,192,145)
+--color-primary-rgb:84,192,145
+--color-accent:rgb(243,177,102)
+--color-accent-rgb:243,177,102
+
+--gradient-primary:linear-gradient(
+135deg,
+rgb(84,192,145) 0%,
+rgb(243,177,102) 100%
+)
+--gradient-primary-r:linear-gradient(
+135deg,
+rgb(243,177,102) 0%,
+rgb(84,192,145) 100%
+)
+--gradient-bg:linear-gradient(180deg,#f4f4f8 0%,#eaeaf4 100%)
+--gradient-surface:linear-gradient(135deg,#ffffff 0%,#eaeaf4 100%)
+--gradient-glow:radial-gradient(
+ellipse 80% 50% at 50% -20%,
+rgba(84,192,145,0.15) 0%,
+transparent 70%
+)
+--gradient-glow-accent:radial-gradient(
+ellipse 60% 40% at 80% 80%,
+rgba(243,177,102,0.1) 0%,
+transparent 60%
+)
+
+--color-text:#0f0f1a
+--color-text-muted:#5a5a78
+--color-text-dim:#8a8aaa
+
+--color-border:rgba(84,192,145,0.2)
+--color-border-subtle:rgba(0,0,0,0.06)
+
+--color-success:rgb(84,192,145)
+--color-warning:rgb(243,177,102)
+--color-danger:#e74c3c
+--color-info:#0dcaf0
+
+--font-family:
+"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+--font-mono:"Fira Code","Consolas",monospace
+--font-size-xs:0.75rem
+--font-size-sm:0.875rem
+--font-size-base:1rem
+--font-size-lg:1.125rem
+--font-size-xl:1.25rem
+--font-size-2xl:1.5rem
+--font-size-3xl:1.875rem
+--font-size-4xl:2.25rem
+--font-size-5xl:3rem
+--font-size-6xl:3.75rem
+--font-size-7xl:4.5rem
+
+--space-1:0.25rem
+--space-2:0.5rem
+--space-3:0.75rem
+--space-4:1rem
+--space-5:1.25rem
+--space-6:1.5rem
+--space-7:1.75rem
+--space-8:2rem
+--space-10:2.5rem
+--space-12:3rem
+--space-16:4rem
+--space-20:5rem
+--space-24:6rem
+--space-32:8rem
+
+--radius-sm:0.375rem
+--radius-md:0.75rem
+--radius-lg:1rem
+--radius-xl:1.5rem
+--radius-2xl:2rem
+--radius-full:9999px
+
+--shadow-sm:0 1px 3px rgba(0,0,0,0.1)
+--shadow-md:0 4px 16px rgba(0,0,0,0.12)
+--shadow-lg:0 8px 32px rgba(0,0,0,0.15)
+--shadow-primary:0 0 40px rgba(84,192,145,0.15)
+--shadow-accent:0 0 40px rgba(243,177,102,0.12)
+--shadow-glow:
+0 0 60px rgba(84,192,145,0.1),0 0 100px rgba(243,177,102,0.06)
+
+--transition-fast:150ms ease
+--transition-base:250ms ease
+--transition-slow:400ms ease
+--transition-spring:400ms cubic-bezier(0.34,1.56,0.64,1)
+
+--code-font:"JetBrains Mono","Fira Code",Consolas,monospace
+--container-max:1200px
+--container-sm:800px
+--container-xs:560px
+--sidebar-width:320px
+
+--z-below:-1
+--z-base:0
+--z-raised:10
+--z-overlay:100
+--z-modal:1000
+--z-nav:9000
+--z-toast:9999
+}
+
+DARK THEME
+---------------------------------------------------------------- */
+.dark-theme{
+--color-bg:#0a0a0f
+--color-surface:#12121a
+--color-surface-2:#1a1a2e
+--color-text:#ffffff
+--color-text-muted:#a0a0b8
+--color-text-dim:#6a6a8a
+--color-border-subtle:rgba(255,255,255,0.06)
+--gradient-bg:linear-gradient(180deg,#0a0a0f 0%,#0d0d1a 100%)
+--gradient-surface:linear-gradient(135deg,#12121a 0%,#1a1a2e 100%)
+--shadow-sm:0 1px 3px rgba(0,0,0,0.4)
+--shadow-md:0 4px 16px rgba(0,0,0,0.5)
+--shadow-lg:0 8px 32px rgba(0,0,0,0.6)
+}
+
+
+QUANTUM AI SIGNALS — SHARED BASE STYLES
+Reset,estilos globales,scrollbar,dark theme overrides y utilidades compartidas.
+Depende de:tokens.css (debe cargarse antes)
+================================================================ */
+
+RESET & BASE
+---------------------------------------------------------------- */
+*,
+*::before,
+*::after{
+box-sizing:border-box
+margin:0
+padding:0
+}
+
+html{
+font-size:16px
+scroll-behavior:smooth
+-webkit-text-size-adjust:100%
+text-size-adjust:100%
+}
+
+body{
+font-family:var(--font-family)
+font-size:var(--font-size-base)
+font-weight:400
+line-height:1.6
+color:var(--color-text)
+background-color:var(--color-bg)
+min-height:100vh
+display:flex
+flex-direction:column
+-webkit-font-smoothing:antialiased
+-moz-osx-font-smoothing:grayscale
+overflow-x:hidden
+}
+
+img,
+video,
+svg{
+max-width:100%
+height:auto
+display:block
+}
+
+a{
+color:var(--color-primary)
+text-decoration:none
+transition:all var(--transition-base)
+}
+
+a:hover{
+color:var(--color-primary)
+opacity:0.9
+}
+
+ul,
+ol{
+list-style:none
+}
+
+button{
+cursor:pointer
+font-family:inherit
+font-size:inherit
+border:none
+background:none
+padding:0
+line-height:inherit
+}
+
+button:focus-visible,
+a:focus-visible{
+outline:2px solid var(--color-primary)
+outline-offset:3px
+border-radius:var(--radius-sm)
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+font-weight:700
+line-height:1.15
+color:var(--color-text)
+letter-spacing:-0.02em
+}
+
+p{
+color:var(--color-text-muted)
+margin-bottom:1rem
+}
+
+p:last-child{
+margin-bottom:0
+}
+
+SCROLLBAR
+---------------------------------------------------------------- */
+::-webkit-scrollbar{
+width:6px
+height:6px
+}
+
+::-webkit-scrollbar-track{
+background:var(--color-bg)
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(
+180deg,
+var(--color-primary),
+var(--color-accent)
+)
+border-radius:var(--radius-full)
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:var(--color-primary)
+}
+
+*{
+scrollbar-width:thin
+scrollbar-color:var(--color-primary) var(--color-bg)
+}
+
+SELECTION
+---------------------------------------------------------------- */
+::selection{
+background:rgba(84,192,145,0.35)
+color:#ffffff
+}
+
+DARK THEME — BLOG COMPONENT OVERRIDES
+(Los overrides genéricos están aquílos específicos de support
+van en support.css)
+---------------------------------------------------------------- */
+.dark-theme body{
+color:var(--color-text)
+background-color:var(--color-bg)
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6{
+color:var(--color-text)
+}
+
+.dark-theme .post-card{
+background:var(--color-surface)
+}
+
+.dark-theme .widget{
+background:var(--color-surface)
+}
+
+.dark-theme .blog-header{
+background:rgba(18,18,26,0.8)
+border-color:var(--color-border)
+}
+
+.dark-theme .blog-header--scrolled{
+background:rgba(18,18,26,0.75)
+backdrop-filter:blur(24px) saturate(180%)
+-webkit-backdrop-filter:blur(24px) saturate(180%)
+border-bottom:1px solid rgba(84,192,145,0.15)
+box-shadow:
+0 4px 30px rgba(0,0,0,0.3),
+0 1px 0 rgba(84,192,145,0.08)
+}
+
+.dark-theme .widget{
+background:rgba(18,18,26,0.6)
+backdrop-filter:blur(16px) saturate(140%)
+-webkit-backdrop-filter:blur(16px) saturate(140%)
+border-color:rgba(255,255,255,0.06)
+border-left-color:var(--color-primary,#54c091)
+}
+
+.dark-theme .search-form-inner{
+background:rgba(18,18,26,0.5)
+border-color:rgba(255,255,255,0.08)
+}
+
+.dark-theme .search-form-inner:focus-within{
+background:rgba(18,18,26,0.7)
+border-color:var(--color-primary)
+box-shadow:
+0 0 0 3px rgba(84,192,145,0.15),
+0 4px 20px rgba(84,192,145,0.08)
+}
+
+.dark-theme .post-card{
+background:var(--color-surface)
+border-color:rgba(255,255,255,0.06)
+}
+
+.dark-theme .post-card:hover{
+border-color:rgba(84,192,145,0.25)
+box-shadow:
+0 12px 40px rgba(0,0,0,0.4),
+0 0 30px rgba(84,192,145,0.06)
+}
+
+.dark-theme .post-content blockquote{
+background:linear-gradient(
+135deg,
+rgba(84,192,145,0.08) 0%,
+rgba(243,177,102,0.04) 100%
+)
+}
+
+.dark-theme .tag-cloud-item{
+border-color:rgba(255,255,255,0.1)
+background:transparent
+}
+
+.dark-theme .tag-cloud-item:hover,
+.dark-theme .tag-cloud-item--active{
+background:var(--color-primary)
+border-color:var(--color-primary)
+}
+
+.dark-theme .blog-footer{
+background:#08080d
+}
+
+.dark-theme .blog-footer::before{
+opacity:0.4
+}
+
+.dark-theme .scroll-to-top{
+box-shadow:
+0 4px 20px rgba(84,192,145,0.25),
+0 2px 8px rgba(0,0,0,0.4)
+}
+
+.dark-theme .scroll-to-top:hover{
+box-shadow:
+0 6px 30px rgba(84,192,145,0.35),
+0 4px 12px rgba(0,0,0,0.4)
+}
+
+.dark-theme pre,
+.dark-theme code{
+background:#1a1a2e
+}
+
+UTILIDADES
+---------------------------------------------------------------- */
+.sr-only{
+position:absolute
+width:1px
+height:1px
+padding:0
+margin:-1px
+overflow:hidden
+clip:rect(0,0,0,0)
+white-space:nowrap
+border:0
+}
+
+.container{
+width:100%
+max-width:var(--container-max,1200px)
+margin-inline:auto
+padding-inline:1.25rem
+}
+
+.text-muted{
+color:var(--color-text-muted)
+}
+
+.text-center{
+text-align:center
+}
+
+.text-right{
+text-align:right
+}
+
+.d-flex{
+display:flex
+}
+
+.align-center{
+align-items:center
+}
+
+.gap-1{
+gap:0.25rem
+}
+
+.gap-2{
+gap:0.5rem
+}
+
+.gap-3{
+gap:1rem
+}
+
+.mt-1{
+margin-top:0.25rem
+}
+
+.mt-2{
+margin-top:0.5rem
+}
+
+.mt-3{
+margin-top:1rem
+}
+
+.mt-4{
+margin-top:1.5rem
+}
+
+.mb-1{
+margin-bottom:0.25rem
+}
+
+.mb-2{
+margin-bottom:0.5rem
+}
+
+.mb-3{
+margin-bottom:1rem
+}
+
+.mb-4{
+margin-bottom:1.5rem
+}
+
+SHARED LAYOUT UTILITIES
+---------------------------------------------------------------- */
+
+.flex{
+display:flex
+}
+
+.flex-col{
+display:flex
+flex-direction:column
+}
+
+.flex-center{
+display:flex
+align-items:center
+justify-content:center
+}
+
+.flex-between{
+display:flex
+align-items:center
+justify-content:space-between
+}
+
+.items-center{
+align-items:center
+}
+
+.justify-center{
+justify-content:center
+}
+
+.grid{
+display:grid
+}
+
+.text-left{
+text-align:left
+}
+
+.text-primary{
+color:var(--color-primary) !important
+}
+
+.text-accent{
+color:var(--color-accent) !important
+}
+
+.text-white{
+color:#ffffff !important
+}
+
+.d-none{
+display:none
+}
+
+.d-block{
+display:block
+}
+
+.cursor-pointer{
+cursor:pointer
+}
+
+.mt-auto{
+margin-top:auto
+}
+
+.mx-auto{
+margin-left:auto
+margin-right:auto
+}
+
+.gap-4{
+gap:var(--space-4)
+}
+
+.gap-6{
+gap:var(--space-6)
+}
+
+.gap-8{
+gap:var(--space-8)
+}
+
+.container-sm{
+max-width:var(--container-sm,800px)
+margin-left:auto
+margin-right:auto
+padding-left:var(--space-6)
+padding-right:var(--space-6)
+}
+
+.container-xs{
+max-width:var(--container-xs,560px)
+margin-left:auto
+margin-right:auto
+padding-left:var(--space-6)
+padding-right:var(--space-6)
+}
+
+.section-padding{
+padding-top:var(--space-24)
+padding-bottom:var(--space-24)
+}
+
+.section-padding-sm{
+padding-top:var(--space-16)
+padding-bottom:var(--space-16)
+}
+
+.section-label{
+display:inline-flex
+align-items:center
+gap:var(--space-1)
+font-size:var(--font-size-xs)
+font-weight:600
+letter-spacing:0.12em
+text-transform:uppercase
+color:var(--color-primary)
+background:rgba(84,192,145,0.1)
+border:1px solid rgba(84,192,145,0.25)
+border-radius:var(--radius-full)
+padding:var(--space-1) var(--space-3)
+}
+
+.section-title{
+font-size:clamp(var(--font-size-3xl),4vw,var(--font-size-5xl))
+font-weight:700
+line-height:1.12
+letter-spacing:-0.025em
+color:var(--color-text)
+}
+
+.section-subtitle{
+font-size:var(--font-size-lg)
+color:var(--color-text-muted)
+line-height:1.7
+max-width:600px
+}
+
+.card{
+background:var(--color-surface)
+border:1px solid var(--color-border-subtle)
+border-radius:var(--radius-xl)
+padding:var(--space-8)
+transition:all var(--transition-slow)
+}
+
+.card:hover{
+border-color:var(--color-border)
+transform:translateY(-4px)
+box-shadow:var(--shadow-primary)
+}
+
+.divider{
+height:1px
+background:linear-gradient(
+90deg,
+transparent,
+var(--color-border),
+transparent
+)
+border:none
+margin:var(--space-16) 0
+}
+
+.empty-state{
+text-align:center
+padding:var(--space-12)
+}
+
+.empty-state__icon{
+font-size:3rem
+margin-bottom:var(--space-4)
+}
+
+.empty-state__title,
+.empty-state h3{
+font-size:var(--font-size-xl)
+color:var(--color-text)
+margin-bottom:var(--space-2)
+}
+
+.empty-state__description,
+.empty-state p{
+color:var(--color-text-dim)
+margin-bottom:var(--space-6)
+}
+
+:focus-visible{
+outline:2px solid var(--color-primary)
+outline-offset:3px
+border-radius:var(--radius-sm)
+}
+
+:focus:not(:focus-visible){
+outline:none
+}
+
+.skip-link{
+position:absolute
+top:-100%
+left:0
+z-index:9999
+padding:0.75rem 1.5rem
+background:var(--color-primary)
+color:#fff
+text-decoration:none
+font-weight:600
+border-radius:0 0 var(--radius-md) 0
+transition:top var(--transition-base)
+}
+
+.skip-link:focus{
+top:0
+}
+
+
+QUANTUM AI SIGNALS — SHARED ANIMATIONS & EFFECTS
+Keyframes,clases de animación,delays,gradient text,glow effects,scroll-to-top,skeleton loading,enhancements generales y accesibilidad. Depende de:tokens.css (debe cargarse antes)
+================================================================ */
+
+22. KEYFRAME ANIMATIONS (Quantum AI Signals)
+---------------------------------------------------------------- */
+@keyframes fadeInUp{
+from{
+opacity:0
+transform:translateY(30px)
+}
+
+to{
+opacity:1
+transform:translateY(0)
+}
+}
+
+@keyframes fadeInLeft{
+from{
+opacity:0
+transform:translateX(-20px)
+}
+
+to{
+opacity:1
+transform:translateX(0)
+}
+}
+
+@keyframes fadeInRight{
+from{
+opacity:0
+transform:translateX(20px)
+}
+
+to{
+opacity:1
+transform:translateX(0)
+}
+}
+
+@keyframes fadeInDown{
+from{
+opacity:0
+transform:translateY(-30px)
+}
+
+to{
+opacity:1
+transform:translateY(0)
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0
+}
+
+to{
+opacity:1
+}
+}
+
+@keyframes slideInLeft{
+from{
+opacity:0
+transform:translateX(-45px)
+}
+
+to{
+opacity:1
+transform:translateX(0)
+}
+}
+
+@keyframes slideInRight{
+from{
+opacity:0
+transform:translateX(45px)
+}
+
+to{
+opacity:1
+transform:translateX(0)
+}
+}
+
+@keyframes scaleIn{
+from{
+opacity:0
+transform:scale(0.95)
+}
+
+to{
+opacity:1
+transform:scale(1)
+}
+}
+
+@keyframes float{
+0%,
+100%{
+transform:translateY(0px)
+}
+
+50%{
+transform:translateY(-18px)
+}
+}
+
+@keyframes floatSlow{
+0%,
+100%{
+transform:translateY(0px) rotate(0deg)
+}
+
+33%{
+transform:translateY(-12px) rotate(2deg)
+}
+
+66%{
+transform:translateY(-6px) rotate(-1deg)
+}
+}
+
+@keyframes pulse{
+0%,
+100%{
+opacity:1
+transform:scale(1)
+}
+
+50%{
+opacity:0.7
+transform:scale(1.05)
+}
+}
+
+@keyframes pulseDot{
+0%,
+100%{
+box-shadow:0 0 0 0 rgba(84,192,145,0.6)
+}
+
+50%{
+box-shadow:0 0 0 10px rgba(84,192,145,0)
+}
+}
+
+@keyframes gradientShift{
+0%{
+background-position:0% 50%
+}
+
+50%{
+background-position:100% 50%
+}
+
+100%{
+background-position:0% 50%
+}
+}
+
+@keyframes gradientShiftBg{
+0%{
+background-position:0% 0%
+}
+
+25%{
+background-position:100% 0%
+}
+
+50%{
+background-position:100% 100%
+}
+
+75%{
+background-position:0% 100%
+}
+
+100%{
+background-position:0% 0%
+}
+}
+
+@keyframes rotate{
+from{
+transform:rotate(0deg)
+}
+
+to{
+transform:rotate(360deg)
+}
+}
+
+@keyframes rotateReverse{
+from{
+transform:rotate(360deg)
+}
+
+to{
+transform:rotate(0deg)
+}
+}
+
+@keyframes shimmer{
+0%{
+background-position:-200% center
+}
+
+100%{
+background-position:200% center
+}
+}
+
+@keyframes blink{
+0%,
+100%{
+opacity:1
+}
+
+50%{
+opacity:0
+}
+}
+
+@keyframes ripple{
+0%{
+transform:scale(0.8)
+opacity:1
+}
+
+100%{
+transform:scale(2.4)
+opacity:0
+}
+}
+
+@keyframes orbitLeft{
+0%{
+transform:translate(0,0) scale(1)
+}
+
+25%{
+transform:translate(-30px,-20px) scale(1.1)
+}
+
+50%{
+transform:translate(-10px,30px) scale(0.9)
+}
+
+75%{
+transform:translate(20px,-10px) scale(1.05)
+}
+
+100%{
+transform:translate(0,0) scale(1)
+}
+}
+
+@keyframes orbitRight{
+0%{
+transform:translate(0,0) scale(1)
+}
+
+25%{
+transform:translate(30px,20px) scale(0.9)
+}
+
+50%{
+transform:translate(10px,-30px) scale(1.1)
+}
+
+75%{
+transform:translate(-20px,10px) scale(1)
+}
+
+100%{
+transform:translate(0,0) scale(1)
+}
+}
+
+@keyframes particleFloat1{
+0%{
+transform:translate(0,0) rotate(0deg)
+opacity:0.6
+}
+
+33%{
+transform:translate(15px,-25px) rotate(120deg)
+opacity:1
+}
+
+66%{
+transform:translate(-10px,15px) rotate(240deg)
+opacity:0.8
+}
+
+100%{
+transform:translate(0,0) rotate(360deg)
+opacity:0.6
+}
+}
+
+@keyframes particleFloat2{
+0%{
+transform:translate(0,0)
+opacity:0.4
+}
+
+50%{
+transform:translate(-20px,-30px)
+opacity:0.9
+}
+
+100%{
+transform:translate(0,0)
+opacity:0.4
+}
+}
+
+@keyframes countUp{
+from{
+opacity:0
+transform:translateY(20px)
+}
+
+to{
+opacity:1
+transform:translateY(0)
+}
+}
+
+@keyframes borderGlow{
+0%,
+100%{
+border-color:rgba(84,192,145,0.3)
+box-shadow:0 0 10px rgba(84,192,145,0.1)
+}
+
+50%{
+border-color:rgba(243,177,102,0.5)
+box-shadow:0 0 25px rgba(243,177,102,0.2)
+}
+}
+
+@keyframes scanline{
+0%{
+top:-10%
+}
+
+100%{
+top:110%
+}
+}
+
+23. ANIMATION HELPERS
+---------------------------------------------------------------- */
+.animate-fadeInUp{
+will-change:transform,opacity
+animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) both !important
+}
+
+.animate-fadeIn{
+will-change:opacity
+animation:fadeIn 0.6s ease both !important
+}
+
+.animate-fadeInLeft{
+will-change:transform,opacity
+animation:fadeInLeft 0.8s cubic-bezier(0.16,1,0.3,1) both !important
+}
+
+.animate-fadeInRight{
+will-change:transform,opacity
+animation:fadeInRight 0.8s cubic-bezier(0.16,1,0.3,1) both !important
+}
+
+.animate-scaleIn{
+will-change:transform,opacity
+animation:scaleIn 0.8s cubic-bezier(0.16,1,0.3,1) both !important
+}
+
+.animate-fadeInDown{
+will-change:transform,opacity
+animation:fadeInDown 0.8s cubic-bezier(0.16,1,0.3,1) both !important
+}
+
+.animate-float{
+animation:float 4s ease-in-out infinite !important
+}
+
+.animate-float-slow{
+animation:floatSlow 7s ease-in-out infinite !important
+}
+
+.animate-pulse{
+animation:pulse 2s ease-in-out infinite !important
+}
+
+.animate-rotate{
+animation:rotate 20s linear infinite !important
+}
+
+.animate-shimmer{
+animation:shimmer 2s ease-in-out infinite !important
+}
+
+.delay-100{
+animation-delay:100ms !important
+}
+
+.delay-200{
+animation-delay:200ms !important
+}
+
+.delay-300{
+animation-delay:300ms !important
+}
+
+.delay-400{
+animation-delay:400ms !important
+}
+
+.delay-500{
+animation-delay:500ms !important
+}
+
+.delay-600{
+animation-delay:0.6s
+}
+
+.delay-800{
+animation-delay:0.8s
+}
+
+.delay-1000{
+animation-delay:1s
+}
+
+23b. SCROLL-TO-TOP BUTTON
+---------------------------------------------------------------- */
+.scroll-to-top{
+position:fixed
+bottom:2rem
+right:2rem
+z-index:var(--z-raised,10)
+width:48px
+height:48px
+border-radius:var(--radius-full,9999px)
+background:var(--gradient-primary)
+color:#fff
+border:none
+cursor:pointer
+display:flex
+align-items:center
+justify-content:center
+font-size:1.25rem
+box-shadow:
+0 4px 20px rgba(84,192,145,0.35),
+0 2px 8px rgba(0,0,0,0.15)
+opacity:0
+visibility:hidden
+transform:translateY(10px)
+transition:
+opacity 0.35s ease,
+visibility 0.35s ease,
+transform 0.35s ease,
+box-shadow 0.35s ease
+pointer-events:none
+}
+
+.scroll-to-top--visible{
+opacity:1
+visibility:visible
+transform:translateY(0)
+pointer-events:auto
+}
+
+.scroll-to-top:hover{
+box-shadow:
+0 6px 30px rgba(84,192,145,0.45),
+0 4px 12px rgba(0,0,0,0.15)
+transform:translateY(-3px)
+}
+
+.scroll-to-top:active{
+transform:translateY(-1px)
+}
+
+.scroll-to-top:focus-visible{
+outline:3px solid var(--color-primary)
+outline-offset:3px
+}
+
+24. GRADIENT TEXT & GLOW EFFECTS
+---------------------------------------------------------------- */
+.gradient-text{
+background:var(--gradient-primary)
+background-size:200% auto
+-webkit-background-clip:text
+-webkit-text-fill-color:transparent
+background-clip:text
+animation:gradientShift 4s ease infinite
+}
+
+.glow-primary{
+box-shadow:var(--shadow-primary)
+}
+
+.glow-accent{
+box-shadow:var(--shadow-accent)
+}
+
+.glow-blob{
+position:absolute
+border-radius:50%
+filter:blur(80px)
+pointer-events:none
+z-index:var(--z-below,-1)
+}
+
+.glow-blob--primary{
+background:rgba(84,192,145,0.25)
+}
+
+.glow-blob--accent{
+background:rgba(243,177,102,0.18)
+}
+
+.divider-glow{
+height:1px
+background:linear-gradient(
+90deg,
+transparent,
+var(--color-primary),
+var(--color-accent),
+var(--color-primary),
+transparent
+)
+opacity:0.4
+margin:2rem 0
+}
+
+27. SKELETON LOADING
+---------------------------------------------------------------- */
+@keyframes skeleton-loading{
+0%{
+background-position:-200px 0
+}
+
+100%{
+background-position:calc(200px+100%) 0
+}
+}
+
+.skeleton{
+background:linear-gradient(
+90deg,
+var(--color-border-subtle) 25%,
+var(--color-border) 50%,
+var(--color-border-subtle) 75%
+)
+background-size:200px 100%
+animation:skeleton-loading 1.5s ease-in-out infinite
+border-radius:var(--radius-sm)
+}
+
+23. ACCESIBILIDAD - FOCUS VISIBLE GLOBAL
+---------------------------------------------------------------- */
+:focus-visible{
+outline:2px solid var(--color-primary)
+outline-offset:3px
+border-radius:var(--radius-sm)
+}
+
+:focus:not(:focus-visible){
+outline:none
+}
+
+28. GENERAL ENHANCEMENTS
+---------------------------------------------------------------- */
+
+.blog-header,
+.blog-header .header-inner,
+.blog-header .blog-logo,
+.blog-header .nav-link{
+transition-property:
+color,background,border-color,box-shadow,backdrop-filter,transform,
+opacity
+transition-duration:0.35s
+transition-timing-function:ease
+}
+
+.post-card__image-wrap::after{
+content:""
+position:absolute
+inset:0
+background:linear-gradient(0deg,rgba(0,0,0,0.08) 0%,transparent 40%)
+pointer-events:none
+transition:opacity 0.4s ease
+}
+
+.post-card:hover .post-card__image-wrap::after{
+opacity:0.5
+}
+
+.posts-grid .post-card{
+animation:fadeInUp 0.8s cubic-bezier(0.16,1,0.3,1) both
+}
+
+.posts-grid .post-card:nth-child(1){
+animation-delay:0ms
+}
+
+.posts-grid .post-card:nth-child(2){
+animation-delay:80ms
+}
+
+.posts-grid .post-card:nth-child(3){
+animation-delay:160ms
+}
+
+.posts-grid .post-card:nth-child(4){
+animation-delay:240ms
+}
+
+.posts-grid .post-card:nth-child(5){
+animation-delay:320ms
+}
+
+.posts-grid .post-card:nth-child(6){
+animation-delay:400ms
+}
+
+.posts-grid .post-card:nth-child(7){
+animation-delay:480ms
+}
+
+.posts-grid .post-card:nth-child(8){
+animation-delay:560ms
+}
+
+.posts-grid .post-card:nth-child(9){
+animation-delay:640ms
+}
+
+.badge{
+transition:
+background var(--transition-base),
+color var(--transition-base),
+box-shadow var(--transition-base),
+transform var(--transition-base)
+}
+
+.badge--featured{
+background:var(--gradient-primary)
+color:#fff
+box-shadow:0 2px 8px rgba(84,192,145,0.25)
+}
+
+.badge--featured:hover{
+transform:scale(1.05)
+box-shadow:0 4px 15px rgba(84,192,145,0.35)
+}
+
+.archive-header{
+background:rgba(255,255,255,0.6)
+backdrop-filter:blur(12px) saturate(140%)
+-webkit-backdrop-filter:blur(12px) saturate(140%)
+border:1px solid var(--color-border-subtle)
+border-left:3px solid var(--color-primary,#54c091)
+}
+
+.post-card__read-more{
+position:relative
+display:inline-flex
+align-items:center
+gap:0.3rem
+}
+
+.post-card__read-more::after{
+content:""
+position:absolute
+bottom:-2px
+left:0
+width:0
+height:2px
+background:var(--gradient-primary)
+border-radius:1px
+transition:width 0.35s ease
+}
+
+.post-card__read-more:hover::after{
+width:100%
+}
+
+@media (prefers-reduced-motion:reduce){
+*,
+*::before,
+*::after{
+animation-duration:0.01ms !important
+animation-iteration-count:1 !important
+transition-duration:0.01ms !important
+scroll-behavior:auto !important
+}
+}
+
